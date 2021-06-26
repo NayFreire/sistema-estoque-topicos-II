@@ -10,7 +10,7 @@ public class NotaFiscal {
     private Colaboradores Colaborador;
     private Date data;
     private Funcionario funcionario;
-    //private Transacao transacao;
+    private Transacao transacao;
 
     public NotaFiscal(int id, Colaboradores colaborador, Date data, Funcionario funcionario) {
         this.id = id;
