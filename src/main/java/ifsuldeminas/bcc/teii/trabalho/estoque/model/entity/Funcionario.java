@@ -15,4 +15,15 @@ public class Funcionario {
         this.tipo = tipo;
     }
 
+    public void AddFuncionario(){
+
+    }
+
+    public void Login(String nomeUsuario, String senha){
+        /*TODO: Criar função de login*/
+    }
+
+    public void Logout(){
+        /*TODO: Criar função de logout*/
+    }
 }
