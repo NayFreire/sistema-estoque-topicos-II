@@ -7,8 +7,7 @@ public class Funcionario {
     private String senha;
     private boolean tipo;
 
-    public Funcionario(int id, String nome, String nomeUsuario, String senha, boolean tipo) {
-        this.id = id;
+    public Funcionario(String nome, String nomeUsuario, String senha, boolean tipo) {
         this.nome = nome;
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
