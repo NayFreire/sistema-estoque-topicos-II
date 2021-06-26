@@ -14,7 +14,6 @@ import javax.persistence.Id;
  */
 
 public class Cliente extends Colaboradores{
-
     private String cnpj;
 
     public Cliente(String cnpj, String nome, String telefone, String endereco) {
