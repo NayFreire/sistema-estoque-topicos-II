@@ -12,11 +12,11 @@ public class NotaFiscal {
     private Funcionario funcionario;
     private Transacao transacao;
 
-    public NotaFiscal(int id, Colaboradores colaborador, Date data, Funcionario funcionario) {
-        this.id = id;
+    public NotaFiscal(Colaboradores colaborador, Date data, Funcionario funcionario, Transacao transacao) {
         Colaborador = colaborador;
         this.data = data;
         this.funcionario = funcionario;
+        this.transacao = transacao;
     }
 
     public Colaboradores getColaborador() {
