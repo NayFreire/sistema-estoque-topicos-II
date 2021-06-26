@@ -5,11 +5,16 @@
  */
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author matheus
  */
+
 public class Cliente extends Colaboradores{
+
     private String cnpj;
 
     public Cliente(String cnpj, String nome, String telefone, String endereco) {
