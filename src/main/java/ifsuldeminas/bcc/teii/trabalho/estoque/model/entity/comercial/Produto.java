@@ -23,11 +23,8 @@ public class Produto {
         this.especificacao = especificacao;
     }
 
-    public void EditarProduto(int id, String nome, int quantidade, String especificacao) {
-        this.id = id;
-        this.nome = nome;
-        this.quantidade = quantidade;
-        this.especificacao = especificacao;
+    public void EditarProduto(int id) {
+        //getId(id)
     }
     
     public void DeletarProduto(int id) {
