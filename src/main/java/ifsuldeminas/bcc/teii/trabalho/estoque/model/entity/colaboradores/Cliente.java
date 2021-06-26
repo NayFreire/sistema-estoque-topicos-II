@@ -9,6 +9,7 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
  *
  * @author matheus
  */
+
 public class Cliente extends Colaboradores{
     private String cnpj;
 
