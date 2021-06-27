@@ -1,30 +1,32 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
+import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Cliente;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class NotaFiscal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private Colaboradores Colaborador;
+    @Temporal(TemporalType.DATE)
     private Date data;
+    private Cliente cliente;
     private Funcionario funcionario;
     private Transacao transacao;
 
-    public NotaFiscal(Colaboradores colaborador, Date data, Funcionario funcionario, Transacao transacao) {
-        Colaborador = colaborador;
+    public NotaFiscal(Date data, Cliente cliente, Funcionario funcionario, Transacao transacao) {
         this.data = data;
+        this.cliente = cliente;
         this.funcionario = funcionario;
         this.transacao = transacao;
     }
 
-    public Colaboradores getColaborador() {
-        return Colaborador;
-    }
+    public NotaFiscal() {
 
-    public void setColaborador(Colaboradores colaborador) {
-        Colaborador = colaborador;
     }
 
     public Date getData() {
