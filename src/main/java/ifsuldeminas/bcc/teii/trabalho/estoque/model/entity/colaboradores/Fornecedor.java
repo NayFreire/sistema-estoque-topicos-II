@@ -10,6 +10,7 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 import javax.persistence.CollectionTable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 
 /**
@@ -18,8 +19,8 @@ import java.util.ArrayList;
  */
 @Entity
 public class Fornecedor extends Colaboradores{
-    @Id
     private String cpf;
+    @OneToMany
     private ArrayList<Produto> produtos;
 
     public Fornecedor(String cpf, ArrayList<Produto> produtos, String nome, String telefone, String endereco) {

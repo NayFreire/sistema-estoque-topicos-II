@@ -3,10 +3,7 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
@@ -16,6 +13,7 @@ public class Transacao {
     private int id;
     private String data;
     private double total;
+    @OneToMany
     private ArrayList<Produto> Produtos;
 
     public Transacao (String data, double total, ArrayList<Produto> Produtos){

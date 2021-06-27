@@ -4,10 +4,12 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colabor
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Fornecedor;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 
 @Entity
 public class Compra extends Transacao{
+    @OneToOne
     private Fornecedor Fornecedor;
 
     public Compra(String data, double total, ArrayList<Produto> Produtos, Fornecedor fornecedor) {
