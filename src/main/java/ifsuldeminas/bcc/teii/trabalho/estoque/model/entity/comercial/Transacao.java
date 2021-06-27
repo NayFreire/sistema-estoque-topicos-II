@@ -3,11 +3,13 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.ArrayList;
 
+@Entity
 public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +22,10 @@ public class Transacao {
         this.data = data;
         this.total = total;
         this.Produtos = Produtos;
+    }
+
+    public Transacao (){
+
     }
 
     /*

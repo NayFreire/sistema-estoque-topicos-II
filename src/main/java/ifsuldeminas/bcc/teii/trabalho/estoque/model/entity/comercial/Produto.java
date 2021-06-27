@@ -30,6 +30,10 @@ public class Produto {
         this.especificacao = especificacao;
     }
 
+    public Produto() {
+
+    }
+
     public void EditarProduto(int id) {
         //getId(id)
     }

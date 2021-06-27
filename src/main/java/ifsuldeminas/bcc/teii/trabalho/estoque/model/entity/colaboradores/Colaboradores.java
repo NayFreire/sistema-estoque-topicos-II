@@ -11,7 +11,7 @@ import javax.persistence.*;
  *
  * @author matheus
  */
-
+@Entity
 public class Colaboradores {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

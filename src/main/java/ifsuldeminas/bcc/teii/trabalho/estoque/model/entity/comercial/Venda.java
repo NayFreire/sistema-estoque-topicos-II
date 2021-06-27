@@ -15,6 +15,10 @@ public class Venda extends Transacao{
         Cliente = cliente;
     }
 
+    public Venda() {
+        super();
+    }
+
     public Cliente getCliente() {return Cliente;}
     public void setCliente(Cliente Cliente){this.Cliente=Cliente;}
 }
