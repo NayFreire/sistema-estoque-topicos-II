@@ -12,7 +12,7 @@ import javax.persistence.Id;
  *
  * @author matheus
  */
-
+@Entity
 public class Cliente extends Colaboradores{
     private String cnpj;
 
@@ -20,7 +20,11 @@ public class Cliente extends Colaboradores{
         super(nome, telefone, endereco);
         this.cnpj = cnpj;
     }
-    
+
+    public Cliente() {
+
+    }
+
     public void EditarColaboradores(String nome, String telefone, String endereco) {
         
         this.cnpj = cnpj;

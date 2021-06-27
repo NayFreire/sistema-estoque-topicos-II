@@ -1,6 +1,14 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Funcionario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
     private String nomeUsuario;
@@ -12,6 +20,10 @@ public class Funcionario {
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
         this.tipo = tipo;
+    }
+
+    public Funcionario() {
+
     }
 
     public void AddFuncionario(){

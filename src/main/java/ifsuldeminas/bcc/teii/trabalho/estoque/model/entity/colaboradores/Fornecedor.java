@@ -6,13 +6,19 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
+
+import javax.persistence.CollectionTable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
 /**
  *
  * @author matheus
  */
+@Entity
 public class Fornecedor extends Colaboradores{
+    @Id
     private String cpf;
     private ArrayList<Produto> produtos;
 
@@ -20,6 +26,10 @@ public class Fornecedor extends Colaboradores{
         super(nome, telefone, endereco);
         this.cpf = cpf;
         this.produtos = produtos;
+    }
+
+    public Fornecedor() {
+
     }
 
     public String getCpf() {

@@ -5,11 +5,16 @@
  */
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
 
+import javax.persistence.*;
+
 /**
  *
  * @author matheus
  */
+
 public class Colaboradores {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
     private String telefone;
@@ -19,6 +24,10 @@ public class Colaboradores {
         this.nome = nome;
         this.telefone = telefone;
         this.endereco = endereco;
+    }
+
+    public Colaboradores() {
+
     }
 
     public void EditarColaboradores(int id) {

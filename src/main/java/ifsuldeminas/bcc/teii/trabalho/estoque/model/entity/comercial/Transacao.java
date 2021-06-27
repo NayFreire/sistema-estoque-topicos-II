@@ -3,20 +3,23 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
 public class Transacao {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String data;
     private double total;
     private ArrayList<Produto> Produtos;
-    private Colaboradores Colaboradores;
 
-    public Transacao (String data, double total, ArrayList<Produto> Produtos, Colaboradores Colaboradores){
+    public Transacao (String data, double total, ArrayList<Produto> Produtos){
         this.data = data;
         this.total = total;
         this.Produtos = Produtos;
-        this.Colaboradores = Colaboradores;
     }
 
     /*
@@ -38,7 +41,5 @@ public class Transacao {
     public ArrayList<Produto> getProdutos(){return Produtos;}
     public void setProdutos(ArrayList<Produto> produtos){this.Produtos = produtos;}
 
-    public Colaboradores getColaboradores(){return Colaboradores;}
-    public void setColaboradores(Colaboradores colaboradores){this.Colaboradores = colaboradores;}
 }
 
