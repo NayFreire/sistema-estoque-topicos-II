@@ -6,13 +6,12 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 /**
  *
  * @author matheus
  */
+
 @Entity
 public class Cliente extends Colaboradores{
     private String cnpj;
