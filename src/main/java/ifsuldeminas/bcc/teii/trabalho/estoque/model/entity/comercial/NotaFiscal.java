@@ -14,8 +14,11 @@ public class NotaFiscal {
     private int id;
     @Temporal(TemporalType.DATE)
     private Date data;
+    @OneToOne
     private Cliente cliente;
+    @OneToOne
     private Funcionario funcionario;
+    @OneToOne
     private Transacao transacao;
 
     public NotaFiscal(Date data, Cliente cliente, Funcionario funcionario, Transacao transacao) {
