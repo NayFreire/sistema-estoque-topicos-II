@@ -9,19 +9,20 @@ import java.util.ArrayList;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
+
 public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String data;
     private double total;
-    @OneToMany
-    private ArrayList<Produto> Produtos;
+    //@OneToMany
+    //private ArrayList<Produto> Produtos;
 
     public Transacao (String data, double total, ArrayList<Produto> Produtos){
         this.data = data;
         this.total = total;
-        this.Produtos = Produtos;
+        //this.Produtos = Produtos;
     }
 
     public Transacao (){
@@ -44,8 +45,8 @@ public class Transacao {
     public double getTotal(){return total;}
     public void setTotal(){this.total=total;}
 
-    public ArrayList<Produto> getProdutos(){return Produtos;}
-    public void setProdutos(ArrayList<Produto> produtos){this.Produtos = produtos;}
+    /*public ArrayList<Produto> getProdutos(){return Produtos;}
+    public void setProdutos(ArrayList<Produto> produtos){this.Produtos = produtos;}*/
 
 }
 
