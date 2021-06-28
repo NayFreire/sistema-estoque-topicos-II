@@ -7,10 +7,7 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 /**
@@ -18,9 +15,11 @@ import java.util.ArrayList;
  * @author matheus
  */
 @Entity
+@DiscriminatorValue(value = "fornecedor")
 public class Fornecedor extends Colaboradores{
     private String cpf;
     @OneToMany
+    @JoinColumn(name = "fornecedorId")
     private ArrayList<Produto> produtos;
 
     public Fornecedor(String cpf, ArrayList<Produto> produtos, String nome, String telefone, String endereco) {

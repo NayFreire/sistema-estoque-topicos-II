@@ -7,6 +7,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo")
 public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

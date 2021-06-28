@@ -3,11 +3,13 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Fornecedor;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import java.util.ArrayList;
 
 @Entity
+@DiscriminatorValue(value = "compra")
 public class Compra extends Transacao{
     @OneToOne
     private Fornecedor Fornecedor;

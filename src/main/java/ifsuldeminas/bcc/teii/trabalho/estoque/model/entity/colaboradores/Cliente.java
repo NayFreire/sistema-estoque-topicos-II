@@ -5,6 +5,7 @@
  */
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
@@ -13,6 +14,7 @@ import javax.persistence.Entity;
  */
 
 @Entity
+@DiscriminatorValue(value = "cliente")
 public class Cliente extends Colaboradores{
     private String cnpj;
 

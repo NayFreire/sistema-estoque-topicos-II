@@ -11,7 +11,10 @@ import javax.persistence.*;
  *
  * @author matheus
  */
+
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo")
 public class Colaboradores {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
