@@ -8,10 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import java.util.ArrayList;
 
-@Entity
-@DiscriminatorValue(value = "venda")
+/*@Entity
+@DiscriminatorValue(value = "venda")*/
 public class Venda extends Transacao{
-    @OneToOne
+    //@OneToOne
     private Cliente Cliente;
 
     public Venda(String data, double total, ArrayList<Produto> Produtos, Cliente cliente) {
