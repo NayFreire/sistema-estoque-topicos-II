@@ -7,14 +7,15 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import java.util.ArrayList;
+import java.util.Date;
 
 /*@Entity
 @DiscriminatorValue(value = "venda")*/
 public class Venda extends Transacao{
-    //@OneToOne
+    //@OneToMany
     private Cliente Cliente;
 
-    public Venda(String data, double total, ArrayList<Produto> Produtos, Cliente cliente) {
+    public Venda(Date data, double total, ArrayList<Produto> Produtos, Cliente cliente) {
         super(data, total, Produtos);
         Cliente = cliente;
     }

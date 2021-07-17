@@ -5,21 +5,21 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
-
 public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String data;
+    private Date data;
     private double total;
-    //@OneToMany
+    //@ManyToOne
     //private ArrayList<Produto> Produtos;
 
-    public Transacao (String data, double total, ArrayList<Produto> Produtos){
+    public Transacao (Date data, double total, ArrayList<Produto> Produtos){
         this.data = data;
         this.total = total;
         //this.Produtos = Produtos;
@@ -39,8 +39,8 @@ public class Transacao {
     public int getId(){return id;}
     public void setId(int id){this.id=id;}
 
-    public String getData(){return data;}
-    public void setData(String data){this.data=data;}
+    public Date getData(){return data;}
+    public void setData(Date data){this.data=data;}
 
     public double getTotal(){return total;}
     public void setTotal(){this.total=total;}
