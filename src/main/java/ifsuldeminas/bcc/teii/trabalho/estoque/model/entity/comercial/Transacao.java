@@ -14,6 +14,7 @@ public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Temporal(TemporalType.DATE)
     private Date data;
     private double total;
     //@ManyToOne
