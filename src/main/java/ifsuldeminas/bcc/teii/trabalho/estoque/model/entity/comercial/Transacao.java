@@ -6,6 +6,8 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -17,13 +19,13 @@ public class Transacao {
     @Temporal(TemporalType.DATE)
     private Date data;
     private double total;
-    //@ManyToOne
-    //private ArrayList<Produto> Produtos;
+    @OneToMany
+    private Set<Produto> Produtos;
 
-    public Transacao (Date data, double total, ArrayList<Produto> Produtos){
+    public Transacao (Date data, double total, Set<Produto> Produtos){
         this.data = data;
         this.total = total;
-        //this.Produtos = Produtos;
+        this.Produtos = new LinkedHashSet<Produto>();
     }
 
     public Transacao (){
@@ -46,8 +48,12 @@ public class Transacao {
     public double getTotal(){return total;}
     public void setTotal(){this.total=total;}
 
-    /*public ArrayList<Produto> getProdutos(){return Produtos;}
-    public void setProdutos(ArrayList<Produto> produtos){this.Produtos = produtos;}*/
+    public Set<Produto> getProdutos() {
+        return Produtos;
+    }
 
+    public void setProdutos(Set<Produto> produtos) {
+        Produtos = produtos;
+    }
 }
 

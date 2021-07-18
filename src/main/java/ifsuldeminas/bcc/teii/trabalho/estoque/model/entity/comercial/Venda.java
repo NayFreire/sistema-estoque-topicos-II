@@ -8,20 +8,25 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Set;
 
-/*@Entity
-@DiscriminatorValue(value = "venda")*/
+@Entity
+@DiscriminatorValue(value = "venda")
 public class Venda extends Transacao{
-    //@OneToMany
+    @OneToOne
     private Cliente Cliente;
 
-    public Venda(Date data, double total, ArrayList<Produto> Produtos, Cliente cliente) {
+    public Venda(Date data, double total, Set<Produto> Produtos, ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Cliente cliente) {
         super(data, total, Produtos);
         Cliente = cliente;
     }
 
+    public Venda(ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Cliente cliente) {
+        Cliente = cliente;
+    }
+
     public Venda() {
-        super();
+
     }
 
     public Cliente getCliente() {return Cliente;}

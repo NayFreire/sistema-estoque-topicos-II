@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @DiscriminatorValue(value = "compra")
@@ -15,13 +16,17 @@ public class Compra extends Transacao{
     @OneToOne
     private Fornecedor Fornecedor;
 
-    public Compra(Date data, double total, ArrayList<Produto> Produtos, Fornecedor fornecedor) {
+    public Compra(Date data, double total, Set<Produto> Produtos, ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Fornecedor fornecedor) {
         super(data, total, Produtos);
         Fornecedor = fornecedor;
     }
 
+    public Compra(ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Fornecedor fornecedor) {
+        Fornecedor = fornecedor;
+    }
+
     public Compra() {
-        super();
+
     }
 
     public Fornecedor getFornecedor(){return Fornecedor;}
