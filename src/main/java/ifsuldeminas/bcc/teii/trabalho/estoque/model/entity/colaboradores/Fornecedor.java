@@ -9,6 +9,8 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  *
@@ -18,14 +20,14 @@ import java.util.ArrayList;
 @DiscriminatorValue(value = "fornecedor")
 public class Fornecedor extends Colaboradores{
     private String cpf;
-    //@OneToMany
-    //@JoinColumn(name = "fornecedorId")
-    //private ArrayList<Produto> produtos;
+    @OneToMany
+    @JoinColumn(name = "fornecedorId")
+    private Set<Produto> produtos;
 
-    public Fornecedor(String cpf, ArrayList<Produto> produtos, String nome, String telefone, String endereco) {
+    public Fornecedor(String cpf, Set<Produto> produtos, String nome, String telefone, String endereco) {
         super(nome, telefone, endereco);
         this.cpf = cpf;
-        //this.produtos = produtos;
+        this.produtos = new LinkedHashSet<Produto>();
     }
 
     public Fornecedor() {
@@ -40,14 +42,14 @@ public class Fornecedor extends Colaboradores{
         this.cpf = cpf;
     }
 
-    /*public ArrayList<Produto> getProdutos() {
+    public Set<Produto> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(ArrayList<Produto> produtos) {
+    public void setProdutos(Set<Produto> produtos) {
         this.produtos = produtos;
-    }*/
-    
+    }
+
     
     
 }
