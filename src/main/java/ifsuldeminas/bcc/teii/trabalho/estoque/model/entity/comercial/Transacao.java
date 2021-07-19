@@ -45,8 +45,13 @@ public class Transacao {
     public Date getData(){return data;}
     public void setData(Date data){this.data=data;}
 
-    public double getTotal(){return total;}
-    public void setTotal(){this.total=total;}
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
 
     public Set<Produto> getProdutos() {
         return Produtos;
