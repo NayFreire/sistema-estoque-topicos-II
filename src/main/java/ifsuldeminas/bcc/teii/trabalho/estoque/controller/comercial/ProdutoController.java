@@ -39,7 +39,7 @@ public class ProdutoController {
         return produtoRepository.save(aux);
     }
 
-    @DeleteMapping("/id}")
+    @DeleteMapping("/{id}")
     public void DeletarProduto(@PathVariable int id){
         produtoRepository.deleteById(id);
     }
