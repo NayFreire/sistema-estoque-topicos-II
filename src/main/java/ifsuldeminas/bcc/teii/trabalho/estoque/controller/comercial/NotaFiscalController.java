@@ -1,6 +1,8 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.controller.comercial;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.controller.colaboradores.ColaboradorController;
+import ifsuldeminas.bcc.teii.trabalho.estoque.controller.colaboradores.FuncionarioController;
+import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.NotaFiscal;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
@@ -9,7 +11,8 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ProdutoReposito
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RequestMapping("/notasfiscais")
+@RestController
 public class NotaFiscalController {
     private NotaFiscalRepository notaFiscalRepository;
 
@@ -20,16 +23,15 @@ public class NotaFiscalController {
     @PostMapping
     public NotaFiscal AdicionarNotaFiscal(@RequestBody NotaFiscal notaFiscal){
 
-        ProdutoController produtoController = new ProdutoController();
-        produtoController.MostrarProduto(notaFiscal.getFuncionario().getId());
-
         ColaboradorController colaboradorController = new ColaboradorController();
-        colaboradorController.ListarColaborador(notaFiscal.getCliente().getId());
 
         TransacaoController transacaoController = new TransacaoController();
-        transacaoController.MostrarTransacao(notaFiscal.getTransacao().getId());
 
+        FuncionarioController funcionarioController = new FuncionarioController();
 
+        //notaFiscal.setFuncionario(funcionarioController.ListarFuncionario(notaFiscal.getFuncionario().getId()));
+        notaFiscal.setTransacao(transacaoController.MostrarTransacao(notaFiscal.getTransacao().getId()));
+        notaFiscal.setCliente(colaboradorController.ListarColaborador(notaFiscal.getCliente().getId()));
         return notaFiscalRepository.save(notaFiscal);
     }
 
