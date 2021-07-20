@@ -2,7 +2,6 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Cliente;
-import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 
 import javax.persistence.*;
 import java.util.Date;
