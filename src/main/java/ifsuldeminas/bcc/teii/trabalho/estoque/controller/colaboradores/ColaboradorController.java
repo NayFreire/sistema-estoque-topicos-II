@@ -10,8 +10,7 @@ import java.util.List;
 @RestController
 public class ColaboradorController {
     private ColaboradorRepository colaboradorRepository;
-
-    public ColaboradorController(ColaboradorRepository colaboradorRepository){
+    public ColaboradorController (ColaboradorRepository colaboradorRepository){
         this.colaboradorRepository = colaboradorRepository;
     }
 
@@ -20,9 +19,27 @@ public class ColaboradorController {
         return colaboradorRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Colaboradores MostrarColaborador(@PathVariable int id){
+    public Colaboradores ListarColaborador(@PathVariable int id){
         return colaboradorRepository.getById(id);
     }
 
+    @PostMapping
+    public Colaboradores AdicionarColaborador(@RequestBody Colaboradores colaboradores){
+        return colaboradorRepository.save(colaboradores);
+    }
+
+    @PutMapping("/{id}")
+    public Colaboradores AtualizarColaborador(@PathVariable int id, @RequestBody Colaboradores colaboradores){
+        Colaboradores aux = colaboradorRepository.getById(id);
+        aux.setNome(colaboradores.getNome());
+        aux.setEndereco(colaboradores.getEndereco());
+        aux.setTelefone(colaboradores.getTelefone());
+      //tipo não atualizavel
+        return colaboradorRepository.save(aux);
+    }
+
+    @DeleteMapping("/{id}")
+    public void DeletarColaborador(@PathVariable int id){
+        colaboradorRepository.deleteById(id);
+    }
 }
