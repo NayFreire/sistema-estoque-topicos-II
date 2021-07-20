@@ -14,6 +14,10 @@ public class ColaboradorController {
         this.colaboradorRepository = colaboradorRepository;
     }
 
+    public ColaboradorController (){
+
+    }
+
     @GetMapping
     public List<Colaboradores> ListarColaboradores(){
         return colaboradorRepository.findAll();

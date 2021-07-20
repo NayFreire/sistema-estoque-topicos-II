@@ -16,6 +16,10 @@ public class TransacaoController {
         this.transacaoRepository = transacaoRepository;
     }
 
+    public TransacaoController(){
+
+    }
+
     @GetMapping
     public List<Transacao> ListarTransacoes(){
         return transacaoRepository.findAll();
