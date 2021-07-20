@@ -2,6 +2,7 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Cliente;
+import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,13 +15,13 @@ public class NotaFiscal {
     @Temporal(TemporalType.DATE)
     private Date data;
     @OneToOne
-    private Cliente cliente;
+    private Colaboradores cliente;
     @OneToOne
     private Funcionario funcionario;
     @OneToOne
     private Transacao transacao;
 
-    public NotaFiscal(Date data, Cliente cliente, Funcionario funcionario, Transacao transacao) {
+    public NotaFiscal(Date data, Colaboradores cliente, Funcionario funcionario, Transacao transacao) {
         this.data = data;
         this.cliente = cliente;
         this.funcionario = funcionario;
@@ -47,11 +48,11 @@ public class NotaFiscal {
         this.data = data;
     }
 
-    public Cliente getCliente() {
+    public Colaboradores getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Colaboradores cliente) {
         this.cliente = cliente;
     }
 

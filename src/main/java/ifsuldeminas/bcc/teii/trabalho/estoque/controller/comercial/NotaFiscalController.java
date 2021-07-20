@@ -11,7 +11,8 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ProdutoReposito
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RequestMapping("/notasfiscais")
+@RestController
 public class NotaFiscalController {
     private NotaFiscalRepository notaFiscalRepository;
 
@@ -19,20 +20,20 @@ public class NotaFiscalController {
         this.notaFiscalRepository = NotaFiscalRepository;
     }
 
-    /*@PostMapping
+    @PostMapping
     public NotaFiscal AdicionarNotaFiscal(@RequestBody NotaFiscal notaFiscal){
 
-        /*ColaboradorController colaboradorController = new ColaboradorController();
+        ColaboradorController colaboradorController = new ColaboradorController();
 
         TransacaoController transacaoController = new TransacaoController();
 
         FuncionarioController funcionarioController = new FuncionarioController();
 
-        notaFiscal.setFuncionario(funcionarioController.ListarFuncionario(notaFiscal.getFuncionario().getId()));
-        notaFiscal.setTransacao(transacaoController.MostrarTransacao(notaFiscal.getTransacao().getId()));*/
-
-        /*return notaFiscalRepository.save(notaFiscal);
-    }*/
+        //notaFiscal.setFuncionario(funcionarioController.ListarFuncionario(notaFiscal.getFuncionario().getId()));
+        notaFiscal.setTransacao(transacaoController.MostrarTransacao(notaFiscal.getTransacao().getId()));
+        notaFiscal.setCliente(colaboradorController.ListarColaborador(notaFiscal.getCliente().getId()));
+        return notaFiscalRepository.save(notaFiscal);
+    }
 
 
 

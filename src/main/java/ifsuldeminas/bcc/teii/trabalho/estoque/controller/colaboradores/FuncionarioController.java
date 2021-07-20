@@ -1,9 +1,7 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.controller.colaboradores;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
-import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.FuncionarioRepository;
-import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,9 +15,16 @@ public class FuncionarioController {
         this.funcionarioRepository = funcionarioRepository;
     }
 
+    public FuncionarioController(){}
+
     @GetMapping
     public List<Funcionario> ListarFuncionarios(){
         return funcionarioRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Funcionario ListarFuncionario(@PathVariable int id){
+        return funcionarioRepository.getById(id);
     }
 
     @PostMapping
