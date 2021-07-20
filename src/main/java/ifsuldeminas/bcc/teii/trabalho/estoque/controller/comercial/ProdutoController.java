@@ -15,6 +15,11 @@ public class ProdutoController {
         this.produtoRepository = produtoRepository;
     }
 
+
+    public ProdutoController(){
+
+    }
+
     @GetMapping
     public List<Produto> ListarProdutos(){
         return produtoRepository.findAll();

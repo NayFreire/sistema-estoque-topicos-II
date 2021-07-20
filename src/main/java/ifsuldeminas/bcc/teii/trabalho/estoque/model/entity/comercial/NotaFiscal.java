@@ -32,12 +32,28 @@ public class NotaFiscal {
 
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Date getData() {
         return data;
     }
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Funcionario getFuncionario() {
@@ -48,7 +64,11 @@ public class NotaFiscal {
         this.funcionario = funcionario;
     }
 
-    public void EmitirNotaFiscal(Colaboradores colaborador, Funcionario funcionario /*, Transacao transacao*/){
-        /*TODO: Criar a funõa de emissão da nota fiscal*/
+    public Transacao getTransacao() {
+        return transacao;
+    }
+
+    public void setTransacao(Transacao transacao) {
+        this.transacao = transacao;
     }
 }
