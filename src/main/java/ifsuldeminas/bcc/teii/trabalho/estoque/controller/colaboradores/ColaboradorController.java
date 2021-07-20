@@ -1,9 +1,7 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.controller.colaboradores;
 
-import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ColaboradorRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +23,6 @@ public class ColaboradorController {
         return colaboradorRepository.findAll();
     }
 
-    @GetMapping("/{id}")
     public Colaboradores ListarColaborador(@PathVariable int id){
         return colaboradorRepository.getById(id);
     }
@@ -49,5 +46,4 @@ public class ColaboradorController {
     public void DeletarColaborador(@PathVariable int id){
         colaboradorRepository.deleteById(id);
     }
-
 }
