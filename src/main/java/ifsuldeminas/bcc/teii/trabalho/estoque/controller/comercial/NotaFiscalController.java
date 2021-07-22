@@ -6,32 +6,56 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.NotaFiscal;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
-import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.NotaFiscalRepository;
-import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ProdutoRepository;
+import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Transacao;
+import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RequestMapping("/notasfiscais")
 @RestController
 public class NotaFiscalController {
-    private NotaFiscalRepository notaFiscalRepository;
+    @Autowired
 
-    public NotaFiscalController(NotaFiscalRepository NotaFiscalRepository){
+    /*Optional<Cliente> opt = clienteRepository.findById(clienteId);
+    Cliente colaborador = opt.get();
+    //fazer o tratamento antes para ver se opt tem o objeto cliente
+    notaFiscal.setColaborador(colaborador);*/
+
+    private NotaFiscalRepository notaFiscalRepository;
+    private ColaboradorRepository colaboradorRepository;
+    private FuncionarioRepository funcionarioRepository;
+    private TransacaoRepository transacaoRepository;
+
+    public NotaFiscalController(NotaFiscalRepository NotaFiscalRepository, ColaboradorRepository colaboradorRepository, FuncionarioRepository funcionarioRepository, TransacaoRepository transacaoRepository){
         this.notaFiscalRepository = NotaFiscalRepository;
+        this.colaboradorRepository = colaboradorRepository;
+        this.funcionarioRepository = funcionarioRepository;
+        this.transacaoRepository = transacaoRepository;
     }
 
-    @PostMapping
-    public NotaFiscal AdicionarNotaFiscal(@RequestBody NotaFiscal notaFiscal){
+    @GetMapping
+    public List<NotaFiscal> ListarNotasfiscais (){
+        return notaFiscalRepository.findAll();
+    }
 
-        ColaboradorController colaboradorController = new ColaboradorController();
+    @PostMapping("/{idCliente}/{idFunc}/{idTrans}")
+    public NotaFiscal AdicionarNotaFiscal(@PathVariable int idCliente, @PathVariable int idFunc, @PathVariable int idTrans, @RequestBody NotaFiscal notaFiscal){
+        Optional<Colaboradores> opt = colaboradorRepository.findById(idCliente);
+        Colaboradores colaborador = opt.get();
+        //fazer o tratamento antes para ver se opt tem o objeto cliente
+        notaFiscal.setCliente(colaborador);
 
-        TransacaoController transacaoController = new TransacaoController();
+        Optional<Funcionario> getFunc = funcionarioRepository.findById(idFunc);
+        Funcionario funcionario = getFunc.get();
+        notaFiscal.setFuncionario(funcionario);
 
-        FuncionarioController funcionarioController = new FuncionarioController();
+        Optional<Transacao> getTrans = transacaoRepository.findById(idTrans);
+        Transacao transacao = getTrans.get();
+        notaFiscal.setTransacao(transacao);
 
-        //notaFiscal.setFuncionario(funcionarioController.ListarFuncionario(notaFiscal.getFuncionario().getId()));
-        notaFiscal.setTransacao(transacaoController.MostrarTransacao(notaFiscal.getTransacao().getId()));
-        notaFiscal.setCliente(colaboradorController.ListarColaborador(notaFiscal.getCliente().getId()));
         return notaFiscalRepository.save(notaFiscal);
     }
 
