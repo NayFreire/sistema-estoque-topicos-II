@@ -32,12 +32,6 @@ public class Transacao {
 
     }
 
-    /*
-    public void AddTransacao(){ }
-    public void ListarTransacao(){ }
-    public void DeletarTransacao (){ }
-    */
-
     //Get e Set
     public int getId(){return id;}
     public void setId(int id){this.id=id;}
@@ -55,6 +49,10 @@ public class Transacao {
 
     public Set<Produto> getProdutos() {
         return Produtos;
+    }
+
+    public void addProdutoSet(Produto produto){
+        Produtos.add(produto);
     }
 
     public void setProdutos(Set<Produto> produtos) {

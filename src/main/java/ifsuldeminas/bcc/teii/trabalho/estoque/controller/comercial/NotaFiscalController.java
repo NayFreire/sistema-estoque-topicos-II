@@ -19,11 +19,6 @@ import java.util.Optional;
 public class NotaFiscalController {
     @Autowired
 
-    /*Optional<Cliente> opt = clienteRepository.findById(clienteId);
-    Cliente colaborador = opt.get();
-    //fazer o tratamento antes para ver se opt tem o objeto cliente
-    notaFiscal.setColaborador(colaborador);*/
-
     private NotaFiscalRepository notaFiscalRepository;
     private ColaboradorRepository colaboradorRepository;
     private FuncionarioRepository funcionarioRepository;
