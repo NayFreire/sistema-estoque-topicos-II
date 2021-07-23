@@ -2,20 +2,20 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.controller.colaboradores;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores.Colaboradores;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ColaboradorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//TODO: Separar o colaborador em clientes e fornecedores, criando um repository pra cada
+
 @RequestMapping("/colaboradores")
 @RestController
 public class ColaboradorController {
+    @Autowired
     private ColaboradorRepository colaboradorRepository;
     public ColaboradorController (ColaboradorRepository colaboradorRepository){
         this.colaboradorRepository = colaboradorRepository;
-    }
-
-    public ColaboradorController (){
-
     }
 
     @GetMapping

@@ -25,18 +25,12 @@ public class Transacao {
     public Transacao (Date data, double total, Set<Produto> Produtos){
         this.data = data;
         this.total = total;
-        this.Produtos = new LinkedHashSet<Produto>();
+        this.Produtos = new LinkedHashSet<Produto>(); 
     }
 
     public Transacao (){
 
     }
-
-    /*
-    public void AddTransacao(){ }
-    public void ListarTransacao(){ }
-    public void DeletarTransacao (){ }
-    */
 
     //Get e Set
     public int getId(){return id;}
@@ -55,6 +49,10 @@ public class Transacao {
 
     public Set<Produto> getProdutos() {
         return Produtos;
+    }
+
+    public void addProdutoSet(Produto produto){
+        Produtos.add(produto);
     }
 
     public void setProdutos(Set<Produto> produtos) {

@@ -2,6 +2,7 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.controller.colaboradores;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.Funcionario;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.FuncionarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,13 +10,12 @@ import java.util.List;
 @RequestMapping("/funcionarios")
 @RestController
 public class FuncionarioController {
+    @Autowired
     private FuncionarioRepository funcionarioRepository;
 
     public FuncionarioController(FuncionarioRepository funcionarioRepository){
         this.funcionarioRepository = funcionarioRepository;
     }
-
-    public FuncionarioController(){}
 
     @GetMapping
     public List<Funcionario> ListarFuncionarios(){

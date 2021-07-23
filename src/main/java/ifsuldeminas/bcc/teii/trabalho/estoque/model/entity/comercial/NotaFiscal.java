@@ -20,12 +20,14 @@ public class NotaFiscal {
     private Funcionario funcionario;
     @OneToOne
     private Transacao transacao;
+    private double total;
 
-    public NotaFiscal(Date data, Colaboradores cliente, Funcionario funcionario, Transacao transacao) {
+    public NotaFiscal(Date data, Colaboradores cliente, Funcionario funcionario, Transacao transacao, double total) {
         this.data = data;
         this.cliente = cliente;
         this.funcionario = funcionario;
         this.transacao = transacao;
+        this.total = total;
     }
 
     public NotaFiscal() {
@@ -70,5 +72,13 @@ public class NotaFiscal {
 
     public void setTransacao(Transacao transacao) {
         this.transacao = transacao;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 }

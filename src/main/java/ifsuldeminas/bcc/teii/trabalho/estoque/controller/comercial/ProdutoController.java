@@ -2,6 +2,7 @@ package ifsuldeminas.bcc.teii.trabalho.estoque.controller.comercial;
 
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial.Produto;
 import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ProdutoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 @RequestMapping("/produtos")
 @RestController
 public class ProdutoController {
+    @Autowired
     private ProdutoRepository produtoRepository;
 
     public ProdutoController(ProdutoRepository produtoRepository){
@@ -16,9 +18,9 @@ public class ProdutoController {
     }
 
 
-    public ProdutoController(){
+    /*public ProdutoController(){
 
-    }
+    }*/
 
     @GetMapping
     public List<Produto> ListarProdutos(){
