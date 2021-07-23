@@ -21,7 +21,7 @@ import java.util.Set;
 public class Fornecedor extends Colaboradores{
     private String cpf;
     @OneToMany
-    @JoinColumn(name = "fornecedorId")
+    //@JoinColumn(name = "fornecedorId")
     private Set<Produto> produtos;
 
     public Fornecedor(String cpf, Set<Produto> produtos, String nome, String telefone, String endereco) {
@@ -44,6 +44,10 @@ public class Fornecedor extends Colaboradores{
 
     public Set<Produto> getProdutos() {
         return produtos;
+    }
+
+    public void addProduto(Produto novoProduto){
+        produtos.add(novoProduto);
     }
 
     public void setProdutos(Set<Produto> produtos) {
