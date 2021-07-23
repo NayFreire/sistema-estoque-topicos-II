@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//TODO: Separar o colaborador em clientes e fornecedores, criando um repository pra cada
+
 @RequestMapping("/colaboradores")
 @RestController
 public class ColaboradorController {
