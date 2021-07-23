@@ -25,7 +25,7 @@ public class Transacao {
     public Transacao (Date data, double total, Set<Produto> Produtos){
         this.data = data;
         this.total = total;
-        this.Produtos = new LinkedHashSet<Produto>();
+        this.Produtos = new LinkedHashSet<Produto>(); 
     }
 
     public Transacao (){
