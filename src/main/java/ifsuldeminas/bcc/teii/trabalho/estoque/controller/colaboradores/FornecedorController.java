@@ -10,8 +10,10 @@ import ifsuldeminas.bcc.teii.trabalho.estoque.model.repositories.ProdutoReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RequestMapping("/fornecedores")
 @RestController
@@ -46,8 +48,31 @@ public class FornecedorController {
         aux.setNome(fornecedor.getNome());
         aux.setEndereco(fornecedor.getEndereco());
         aux.setTelefone(fornecedor.getTelefone());
+        aux.setCpf(fornecedor.getCpf());
         //tipo não atualizavel
         return fornecedorRepository.save(aux);
+    }
+
+    @PostMapping("/{id}/produto/{idProduto}")
+    public Colaboradores AtualizarListaProdutos(@PathVariable int id, @PathVariable int idProduto, @RequestBody Fornecedor fornecedor) {
+        Optional<Fornecedor> aux = fornecedorRepository.findById(id);
+        Fornecedor fornededor = aux.get();
+
+        Optional<Produto> prod = produtoRepository.findById(idProduto);
+        Produto novoProduto = prod.get();
+
+        Set<Produto> produtos = new LinkedHashSet<>();
+        produtos.add(novoProduto);
+
+        fornededor.setNome(fornecedor.getNome());
+        fornededor.setEndereco(fornecedor.getEndereco());
+        fornededor.setTelefone(fornecedor.getTelefone());
+        fornededor.setCpf(fornecedor.getCpf());
+
+        //aux.addProduto(prod);
+        fornededor.setProdutos(produtos);
+
+        return fornecedorRepository.save(fornededor);
     }
 
     @DeleteMapping("/{id}")
