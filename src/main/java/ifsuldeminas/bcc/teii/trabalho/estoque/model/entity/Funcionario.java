@@ -4,15 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotNull
     private String nome;
+    @NotNull
     private String nomeUsuario;
+    @NotNull
     private String senha;
+    @NotNull
     private boolean tipo;
 
     public Funcionario(String nome, String nomeUsuario, String senha, boolean tipo) {
