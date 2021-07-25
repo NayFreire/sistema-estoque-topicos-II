@@ -6,6 +6,7 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.colaboradores;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -19,8 +20,11 @@ public class Colaboradores {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotNull
     private String nome;
+    @NotNull
     private String telefone;
+    @NotNull
     private String endereco;
 
     public Colaboradores( String nome, String telefone, String endereco) {

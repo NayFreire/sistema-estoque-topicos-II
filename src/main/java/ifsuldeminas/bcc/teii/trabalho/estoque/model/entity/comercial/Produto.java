@@ -6,6 +6,7 @@
 package ifsuldeminas.bcc.teii.trabalho.estoque.model.entity.comercial;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -17,8 +18,11 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotNull
     private String nome;
+    @NotNull
     private int quantidade;
+    @NotNull
     private String especificacao;
 
     public Produto(String nome, int quantidade, String especificacao) {
