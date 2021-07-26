@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "41f3b05e-325b-4f79-b88f-f96d1c6b2306",
+		"name": "Estoque SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "getProdutos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postProduto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"especificacao\": \"bailarina\",\r\n    \"nome\": \"alface\",\r\n    \"quantidade\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProduto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/produtos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putProduto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"especificacao\": \"fuji\",\r\n    \"nome\": \"maçã\",\r\n    \"quantidade\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/produtos/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transação",
+			"item": [
+				{
+					"name": "getTransacao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "postTransacao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"venda\",\r\n    \"data\": \"2021-04-05\",\r\n    \"total\": 1500,\r\n    \"fornecedor_id\": 1,\r\n    \"cliente_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/transacoes/24",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transacoes",
+								"24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionário",
+			"item": [
+				{
+					"name": "getFuncionarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postFuncionario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"laura\",\r\n    \"nomeUsuario\": \"laurasilva\",\r\n    \"senha\": \"1234\",\r\n    \"tipo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/funcionarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Nota Fiscal",
+			"item": [
+				{
+					"name": "postNotaFiscal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"total\": 3000,\r\n    \"data\": \"2021-04-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/notasfiscais/8/10/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"notasfiscais",
+								"8",
+								"10",
+								"6"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNotasFiscais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/notasfiscais",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"notasfiscais"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Colaborador",
+			"item": [
+				{
+					"name": "getColaborador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/colaboradores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"colaboradores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postColaborador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"endereco\": \"Rua rosa\",\r\n    \"nome\": \"Matheus\",\r\n    \"telefone\": \"998889999\",\r\n    \"tipo\": \"cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/colaboradores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"colaboradores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "getClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"roberta\",\r\n    \"telefone\":\"(35) 88888-88888\", \r\n    \"endereco\":\"pouso alegre\",\r\n    \"cnpj\": \"877654-212315.0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fornecedor",
+			"item": [
+				{
+					"name": "getFornecedor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fornecedores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fornecedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postFornecedor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"julia\",\r\n    \"telefone\":\"(35) 91000-9999\", \r\n    \"endereco\":\"passos\",   \r\n    \"cpf\": \"000.315.222-82\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fornecedores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fornecedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putListaProdutos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"julia\",\r\n    \"telefone\":\"(35) 91000-9999\", \r\n    \"endereco\":\"passos\",   \r\n    \"cpf\": \"000000-212315.2222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fornecedores/29/produto/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fornecedores",
+								"29",
+								"produto",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putFornecedor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"julia\",\r\n    \"telefone\":\"(35) 91000-9999\", \r\n    \"endereco\":\"passos\",   \r\n    \"cpf\": \"000-215.222-88\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fornecedores/29",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fornecedores",
+								"29"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Venda",
+			"item": [
+				{
+					"name": "getVenda",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vendas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postVenda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"2021-07-08\",\r\n    \"total\": 800\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vendas/2/cliente/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendas",
+								"2",
+								"cliente",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Compra",
+			"item": [
+				{
+					"name": "getCompras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vendas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postCompra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"2021-07-11\",\r\n    \"total\": 8100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/compras/2/fornecedor/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compras",
+								"2",
+								"fornecedor",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
